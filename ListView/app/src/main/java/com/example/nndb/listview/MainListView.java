@@ -35,10 +35,10 @@ public class MainListView extends AppCompatActivity {
 
     private void addControls() {
         lvDanhBa= this.<ListView>findViewById(R.id.lv_DanhBa);
-        dsDanhBa=new ArrayList<>();
-        dsDanhBa.add(new DanhBaDTO(1,"Day la nguoi thu 1","112233445566"));
-        dsDanhBa.add(new DanhBaDTO(2,"Day la nguoi thu 2","0123456789"));
-        dsDanhBa.add(new DanhBaDTO(3,"Day la nguoi thu 3","012585855654"));
+        dsDanhBa=new ArrayList<DanhBaDTO>();
+        dsDanhBa.add(new DanhBaDTO(1,"Nguoi thu 1","01662222222"));
+        dsDanhBa.add(new DanhBaDTO(2,"Nguoi thu 2","0166221235"));
+        dsDanhBa.add(new DanhBaDTO(3,"Nguoi thu 3","01662289895"));
 
         danhBaAdapter=new DanhBaAdapter(MainListView.this,
                 R.layout.item,

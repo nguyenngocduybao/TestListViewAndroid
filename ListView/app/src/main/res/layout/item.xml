@@ -30,26 +30,26 @@
         android:layout_weight="30"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/btn_Detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/detail" />
+
+        <ImageButton
             android:id="@+id/btn_Call"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/call" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btn_sms"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/sms" />
-
-        <ImageView
-            android:id="@+id/btn_Detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/detail" />
     </LinearLayout>
 
     <TextView

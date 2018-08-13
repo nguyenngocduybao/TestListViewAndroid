@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +15,7 @@ import com.example.nndb.model.DanhBaDTO;
 
 import java.util.List;
 
-public class DanhBaAdapter extends ArrayAdapter<DanhBaDTO> {
+public class DanhBaAdapter extends ArrayAdapter<DanhBaDTO>  {
 
     Activity context;
     int resource;
@@ -32,21 +33,30 @@ public class DanhBaAdapter extends ArrayAdapter<DanhBaDTO> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater=this.context.getLayoutInflater();
         View row=inflater.inflate(this.resource,null);
-        TextView tv_Ten=(TextView)row.findViewById(R.id.tv_HoTen);
-        TextView tv_Phone=(TextView)row.findViewById((R.id.tv_SoDienThoai));
+        TextView tvTen=(TextView)row.findViewById(R.id.tv_HoTen);
+        TextView tvPhone=(TextView)row.findViewById((R.id.tv_SoDienThoai));
         ImageButton btnCall=row.findViewById(R.id.btn_Call);
         ImageButton btnSms=row.findViewById(R.id.btn_sms);
         ImageButton btnDetail=row.findViewById((R.id.btn_Detail));
 
         final DanhBaDTO db=this.objects.get(position);
-        tv_Ten.setText(db.getTen());
-        tv_Phone.setText(db.getPhone());
+        tvTen.setText(db.getTen());
+        tvPhone.setText(db.getPhone());
 
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                xuLyXemChiTiet(db);
+            }
+        });
         
         return row;
 
     }
 
+    private void xuLyXemChiTiet(DanhBaDTO db) {
+        Toast.makeText(this.context,"Bạn chọn: " +db.getTen(),Toast.LENGTH_LONG).show();
+    }
 
 
 }

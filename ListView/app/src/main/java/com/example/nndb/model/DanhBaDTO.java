@@ -32,5 +32,8 @@ public class DanhBaDTO implements Serializable {
     }
 
     public DanhBaDTO(int i, String test1, String s) {
+        setMa(i);
+        setPhone(s);
+        setTen(test1);
     }
 }
